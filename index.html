@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link rel="stylesheet" href="output.css">
+  </head>
+  <body class="">
+    <div class = "bg-stone-200 w-screen h-screen flex flex-row justify-center items-center" id="app">
+      <div class="w-96 h-72 rounded-2xl border-solid border-stone-800 border-4 flex flex-col justify-center items-end p-10 font-mono">
+        <div id="timezone" class="text-sm">Asia/Kolkata</div>
+        <div id="time" class="text-6xl ">06:35:69</div>
+        <div id="date" class="text-sm">Saturday, 27 January, 2024</div>
+      </div>
+    </div>
+    
+    <script src="node_modules/dayjs/dayjs.min.js"></script>
+    <script src="node_modules/dayjs/plugin/timezone"></script>
+    <script type="module" src="/index.js"></script>
+  </body>
+</html>
