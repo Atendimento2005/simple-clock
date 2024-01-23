@@ -35,7 +35,10 @@
           aria-labelledby="tz-modal-title"
         >
           <header class="flex flex-col justify-around items-center h-full">
-            <h2 id="tz-modal-title" class="text-2xl font-medium font-mono md:text-4xl md:font-semibold">
+            <h2
+              id="tz-modal-title"
+              class="text-2xl font-medium font-mono md:text-4xl md:font-semibold"
+            >
               Change timezone
             </h2>
 
@@ -50,7 +53,7 @@
             <button
               aria-label="Close modal"
               data-micromodal-close
-              class="text-sm font-medium md:text-xl md:font-semibold  border-solid border-stone-800 border-2 rounded-lg px-2 py-1"
+              class="text-sm font-medium md:text-xl md:font-semibold border-solid border-stone-800 border-2 rounded-lg px-2 py-1"
             >
               CLOSE
             </button>
@@ -60,9 +63,6 @@
     </div>
 
     <script type="module" src="node_modules/micromodal"></script>
-    <script src="node_modules/dayjs"></script>
-    <script src="node_modules/dayjs/plugin/timezone"></script>
-    <script src="node_modules/dayjs/plugin/utc"></script>
     <script type="module" src="/index.js"></script>
   </body>
 </html>
