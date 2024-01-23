@@ -2,22 +2,67 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-    <link rel="stylesheet" href="output.css">
+    <title>Simple Clock</title>
+    <link rel="stylesheet" href="output.css" />
   </head>
+
   <body class="">
-    <div class = "bg-stone-200 w-screen h-screen flex flex-row justify-center items-center" id="app">
-      <div class="w-96 h-72 rounded-2xl border-solid border-stone-800 border-4 flex flex-col justify-center items-end p-10 font-mono">
-        <div id="timezone" class="text-sm">Asia/Kolkata</div>
-        <div id="time" class="text-6xl ">06:35:69</div>
-        <div id="date" class="text-sm">Saturday, 27 January, 2024</div>
+    <div
+      class="bg-stone-200 w-screen h-screen flex flex-row justify-center items-center"
+      id="app"
+    >
+      <div
+        class="w-96 h-72 md:max-w-screen-sm md:w-full md:h-96 rounded-2xl border-solid border-stone-800 border-4 flex flex-col justify-center items-end p-10 font-mono"
+      >
+        <div id="timezone" class="text-sm md:text-2xl">Asia/Kolkata</div>
+        <div id="time" class="text-6xl md:text-8xl">06:35:69</div>
+        <div id="date" class="text-sm md:text-2xl">
+          Saturday, 27 January, 2024
+        </div>
       </div>
     </div>
-    
-    <script src="node_modules/dayjs/dayjs.min.js"></script>
+    <div id="tz-modal" aria-hidden="true" class="modal">
+      <div
+        tabindex="-1"
+        class="fixed w-screen h-screen top-0 left-0 flex flex-row justify-center items-center"
+        data-micromodal-close
+      >
+        <div
+          role="dialog"
+          class="w-72 h-60 bg-stone-300 rounded-2xl border-solid border-stone-800 border-4 md:w-96 md:h-72 flex flex-row justify-center items-center"
+          aria-modal="true"
+          aria-labelledby="tz-modal-title"
+        >
+          <header class="flex flex-col justify-around items-center h-full">
+            <h2 id="tz-modal-title" class="text-2xl font-medium font-mono md:text-4xl md:font-semibold">
+              Change timezone
+            </h2>
+
+            <div id="tz-modal-content">
+              <select
+                name=""
+                id="timezone-input"
+                class="border-2 rounded-xl border-solid md:text-xl md:w-72 md:font-medium border-stone-800 p-2 w-52 bg-stone-200 relative top-0 left-0 text-ellipsis"
+              ></select>
+            </div>
+
+            <button
+              aria-label="Close modal"
+              data-micromodal-close
+              class="text-sm font-medium md:text-xl md:font-semibold  border-solid border-stone-800 border-2 rounded-lg px-2 py-1"
+            >
+              CLOSE
+            </button>
+          </header>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="node_modules/micromodal"></script>
+    <script src="node_modules/dayjs"></script>
     <script src="node_modules/dayjs/plugin/timezone"></script>
+    <script src="node_modules/dayjs/plugin/utc"></script>
     <script type="module" src="/index.js"></script>
   </body>
 </html>
